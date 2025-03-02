@@ -1,0 +1,960 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Audiowide&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Dots&display=swap');
+:root{
+  --gray: hsla(235, 0%, 90%, 1);
+  --padding: 0 12vw;
+  
+  --vertical-p: 1.2vw;
+  --horizontal-p: 2.5vw;
+  
+  --vertical-h1: 5vw;
+  --horizontal-h1: 8vw;
+  
+  --vertical-h2: 2.5vw;
+  --horizontal-h2: 5vw;
+  
+  --accent: #DA57FF;
+}
+/* BASIC FONT SIZE PREPARING -- */
+h1{
+  font-size: var(--vertical-h1);
+}
+h2{
+  font-size: var(--vertical-h2);
+}
+p{
+  font-size: var(--vertical-p);
+}
+button{
+  cursor: pointer;
+}
+/* MAIN CSS CODE -- ^*/
+*{
+  padding: 0;
+  margin: 0 0 0 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+}
+body{
+  height: max-content;
+  width: 100vw;
+  background: hsla(235, 0%, 100%, 1);
+  overflow-x: hidden;
+  position: relative;
+}
+.sec1{
+  min-height: 100vh;
+  width: 100vw;
+  background: hsla(0, 0%, 95%, 1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+.sec1::before{
+  height: 200%;
+  width: 20%;
+  content: "";
+  bottom: -0%;
+  left: 10%;
+  position: absolute;
+  background: #1F0036;
+  transform: rotate(45deg);
+  filter: blur(7vw);
+  opacity: 0.15;
+  display: block;
+}
+.sec1 nav{
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw 12vw;
+}
+.sec1 nav #logo h1{
+  font-size: 2vw;
+  font-weight: 1200
+}
+.sec1 nav ul{
+  list-style: none;
+  display: flex;
+  font-size: var(--vertical-p);
+  gap: 4vw;
+  justify-content: center;
+  align-items: center
+}
+.sec1 nav ul li{
+  display: flex;
+  justify-content: center;
+  gap: 0.5vw;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 0.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.sec1 nav ul #active{
+  font-weight: bold;
+}
+.sec1 nav ul li span{
+  display: inline-block;
+  width: 100%;
+  height: 0.15vw;
+  background: #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+.sec1 nav ul li:hover span{
+  transform: translateX(0%)
+}
+.sec1 nav button{
+  padding: 0.8vw 2.2vw;
+  border-radius: 50px;
+  background: transparent;
+  border: 1px solid #000;
+  position: relative;
+  z-index: 2;
+  color: #000;
+  transition: 0.3s;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: var(--vertical-p);
+  white-space: nowrap
+}
+.sec1 nav button:hover{
+  background: #000;
+  color: #fff;
+}
+.sec1 nav button::before{
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  z-index: -1;
+  border-radius: 50%;
+  transition: 0.3s;
+  transform: scaleX(0);
+  transform-origin: left
+}
+.sec1 nav button:hover::before{
+  transform: scaleY(1);
+  border-radius: 0;
+}
+.sec1 .contend{
+  padding: var(--padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  margin-top: 8vw;
+  z-index: 1;
+}
+.sec1 .contend .textC{
+  display: flex;
+  flex-direction: column;
+  gap: 2vw
+}
+.sec1 .contend .textC h1{
+  font-weight: 600;
+  line-height: 6.5vw
+}
+.sec1 .contend .textC p{
+  width: 30vw
+}
+.sec1 .contend .textC p span{
+  font-weight: bold;
+}
+.sec1 .contend .textC .communityC{
+  height: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+  width: max-content;
+  margin-top: 5vw
+}
+.sec1 .contend .textC .communityC #imgC{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw
+}
+.sec1 .contend .textC .communityC #imgC span{
+  width: 4vw;
+  height: 4vw;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  display: inline-block;
+}
+.sec1 .contend .textC .communityC #textC p {
+  width: max-content;
+}
+.sec1 .contend .textC .communityC #textC p:nth-child(2){
+  font-weight: bold;
+}
+.sec1 .contend .imgC{
+  position: relative;
+  filter: drop-shadow(1vw 1vw 2vw hsla(0, 0%, 0%, 0.2))
+}
+.sec1 .contend .imgC #arrow{
+  background: var(--accent);
+  position: absolute;
+  height: 8vw;
+  width: 8vw;
+  top: -10%;
+  right: -10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  box-shadow: -2px 0px 2px hsla(0, 0%, 95%, 1);
+}
+.sec1 .contend .imgC img{
+  height: 35vw;
+  border-radius: 2vw;
+}
+.sec1 .contend .imgC button{
+  padding: 0.8vw 2.2vw;
+  border-radius: 50px;
+  background: #000;
+  border: 1px solid #fff;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--vertical-p);
+  box-shadow: 0 0 0 0.5vw #000;
+  position: absolute;
+  left: -25%;
+  top: 65%;
+}
+.sec2{
+  width: 100vw;
+  background: hsla(0, 0%, 95%, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--padding);
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  gap: 5vw
+}
+.sec2 .textC{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sec2 .textC h2{
+  line-height: 3vw
+}
+.sec2 .textC div{
+  width: 15vw
+}
+.sec2 .textC div svg{
+  padding: 0.3vw;
+  background: #000;
+  border-radius: 1vw
+}
+.sec2 .textC div p span{
+  font-weight: bold;
+}
+.sec2 .contend{
+  width: 100%;
+  padding: 5vw 7vw;
+  background: #000;
+  border-radius: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5vw
+}
+.sec2 .contend h2,
+.sec2 .contend p{
+  color: #fff;
+  width: 30vw;
+  text-align: center;
+}
+.sec2 .contend .seo{
+  background: #000;
+  padding: 0.7vw;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sec2 .contend .seo button{
+  padding: 0.5vw 2.2vw;
+  border-radius: 50px;
+  background: transparent;
+  border: 1px solid #fff;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--vertical-p);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw
+}
+.sec2 .contend .seo input{
+  height: 100%;
+  border: none;
+  padding: 0 1vw;
+  background: transparent;
+  outline: none;
+  color: #fff;
+}
+.sec2 .contend .seo #search{
+  padding: 0;
+  border: none;
+  margin-right: 1vw
+}
+.sec2 .contend .contendC{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw
+}
+.sec2 .contend .contendC .navC{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1vw
+}
+.sec2 .contend .contendC .navC ul{
+  list-style: none;
+  display: flex;
+  gap: 2vw;
+  color: #fff;
+  font-size: var(--vertical-p)
+}
+.sec2 .contend .contendC .navC ul li{
+  color: #fff;
+  cursor: pointer;
+}
+.sec2 .contend .contendC .boxC{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.sec2 .contend .contendC .boxC #box{
+  width: 20vw;
+  background: #fff;
+  border-radius: 1vw;
+  padding: 1vw;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+}
+.sec2 .contend .contendC .boxC #box img{
+  width: 100%;
+  height: 12vw;
+  border-radius: 1vw;
+  object-fit: cover;
+}
+.sec2 .contend .contendC .boxC #box p{
+  color: #000;
+  margin-top: 1vw;
+  font-weight: bold
+}
+.sec2 .contend .contendC .boxC #box button{
+  padding: 0.8vw 2vw;
+  border-radius: 50px;
+  background: transparent;
+  border: 1px solid #000;
+  position: relative;
+  z-index: 2;
+  color: #000;
+  transition: 0.3s;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: var(--vertical-p);
+  white-space: nowrap
+}
+.sec2 .contend #nxt {
+  padding: 0.8vw 2.2vw;
+  border-radius: 50px;
+  background: #fff;
+  border: 1px solid #fff;
+  position: relative;
+  z-index: 2;
+  color: #000;
+  font-weight: 600;
+  font-size: var(--vertical-p);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2vw;
+  gap: 0.5vw
+}
+.sec3{
+  width: 100vw;
+  background: hsla(0, 0%, 95%, 1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: var(--padding);
+  padding-top: 5vw;
+  padding-bottom: 20vw;
+}
+.sec3 .imgC{
+  padding: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35vw;
+  height: 20vw;
+  position: relative;
+  perspective: 2500px
+}
+.sec3 .imgC div{
+  width: 30vw;
+  height: 20vw;
+  background: hsla(235, 0%, 50%, 1);
+  position: absolute;
+  transform: translate(-50%, -50%) rotateX(50deg) rotateZ(30deg);
+  opacity: 0.5;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  border-radius: 2vw;
+  background-size: cover;
+  background-position: center;
+}
+.sec3 .imgC #card{
+  top: 20%;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+.sec3 .imgC #skin{
+  top: 80%;
+  z-index: 0;
+  box-shadow: 6vw 6vw 7vw hsla(0, 0%, 0%, 0.3);
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+.sec3 .textC{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  width: max-content;
+}
+.sec3 .textC p{
+  width: 30vw;
+}
+.sec3 .textC .checkP{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  font-weight: bold;
+}
+.sec3 .textC .checkP div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw
+}
+.sec3 .textC .checkP span{
+  height: 1.5vw;
+  width: 1.5vw;
+  display: inline-flex;
+  background: #000;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.sec3 .textC button{
+  width: max-content;
+  padding: 0.8vw 2.2vw;
+  border-radius: 50px;
+  background: #000;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--vertical-p);
+  margin-top: 1vw;
+  border: none;
+}
+.sec4{
+  width: 100vw;
+  background: hsla(0, 0%, 0%, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--padding);
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  color: #fff;
+  text-align: center;
+  gap: 2vw
+}
+.sec4 *{
+  color: #fff;
+}
+.sec4 .slider{
+  width: 100vw;
+  scroll-snap-type: x mandatory;
+  padding: 4vw 6vw;
+  overflow-x: auto;
+}
+.sec4 .slider .boxC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  gap: 5vw;
+}
+.sec4 .slider .boxC .review{
+  height: max-content;
+  min-width: 40vw;
+  background: hsla(222, 100%, 8%, 1);
+  scroll-snap-align: center;
+  border-radius: 2vw;
+  padding: 4vw 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sec4 .slider .boxC .review:last-child{
+  margin-right: 5vw
+}
+.sec4 .slider .boxC .review .starC{
+  display: flex;
+  gap: 0.5vw;
+  margin-bottom: 2vw
+}
+.sec4 .slider .boxC .review .starC span{
+  height: 1.5vw;
+  width: 1.5vw;
+  background: #FFD319;
+  display: inline-block;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  
+}
+.sec4 .slider .boxC .review p{
+  width: 35vw;
+  text-align: left;
+  margin-top: 0;
+}
+.sec4 .slider .boxC .review #name{
+  margin-top: 3vw;
+  font-weight: bold;
+}
+.sec4 .slider .boxC .review #time{
+  color: hsla(0, 0%, 65%, 1);
+}
+.sec4 p{
+  width: 50%;
+  margin-top: 2vw;
+}
+.sec4 p span{
+  color: hsla(0, 0%, 65%, 1);
+  font-weight: bold;
+}
+.sec4 button{
+  padding: 0.8vw 2vw;
+  border-radius: 50px;
+  background: #fff;
+  border: none;
+  position: relative;
+  z-index: 2;
+  color: #000;
+  transition: 0.3s;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: var(--vertical-p);
+  white-space: nowrap
+}
+.sec5{
+  width: 100vw;
+  background: hsla(0, 0%, 95%, 1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: var(--padding);
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+}
+.sec5 .textC{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw
+}
+.sec5 .textC p{
+  width: 40vw;
+}
+.sec5 .textC button{
+  width: max-content;
+  padding: 0.8vw 2.2vw;
+  border-radius: 50px;
+  background: #000;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--vertical-p);
+  margin-top: 1vw;
+  border: none;
+}
+.sec5 .imgC{
+  height: 100%;
+  width: 40vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 5vw;
+}
+.sec5 .imgC img{
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2vw
+}
+.sec5 .imgC #img1{
+  top: 20%;
+  left: -0%;
+  transform: rotate(-15deg)
+}
+.sec5 .imgC #img2{
+  top: -20%;
+  left: 30%;
+  transform: rotate(-15deg)
+}
+.sec6{
+  width: 100vw;
+  background: hsla(0, 0%, 0%, 1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: var(--padding);
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  text-align: center;
+}
+.sec6 *{
+  color: #fff;
+}
+.sec6 .textC{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw
+}
+.sec6 #logo h1 {
+  font-size: 2vw;
+  font-weight: 1200;
+}
+.sec6 .iconC{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+/*CSS CODE FOR HORIZONTAL MODE*/
+@media (orientation: portrait){
+  /* BASIC FONT SIZE PREPARING -- */
+  h1{
+    font-size: var(--horizontal-h1);
+  }
+  h2{
+    font-size: var(--horizontal-h2);
+  }
+  p{
+    font-size: var(--horizontal-p);
+  }
+  /* MAIN CSS CODE -- ^*/
+  .sec1 .contend{
+    flex-direction: column;
+    width: 100vw;
+    gap: 10vh
+  }
+  .sec1 .contend .textC{
+    gap: 4vw;
+    width: 100%;
+  }
+  .sec1 .contend .textC h1{
+    line-height: 8vw
+  }
+  .sec1 .contend .textC p{
+    width: 70vw
+  }
+  .sec1 .contend .textC .communityC{
+    gap: 4vw;
+    margin-top: 6vw
+  }
+  .sec1 .contend .textC .communityC #imgC{
+    gap: 0.8vw
+  }
+  .sec1 .contend .textC .communityC #imgC span{
+    width: 7vw;
+    height: 7vw;
+  }
+  .sec1 .contend .imgC{
+    margin-left: 30vw
+  }
+  .sec1 .contend .imgC #arrow{
+    height: 10vw;
+    width: 10vw;
+  }
+  .sec1 .contend .imgC img{
+    height: 50vw;
+  }
+  .sec1 .contend .imgC button{
+    padding: 1vw 3vw;
+    font-size: var(--horizontal-p);
+    left: -30%;
+  }
+  .sec2{
+    gap: 10vw
+  }
+  .sec2 .textC{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: max-content;
+    gap: 5vw
+  }
+  .sec2 .textC h2{
+    line-height: 6vw
+  }
+  .sec2 .textC div{
+    width: 60vw
+  }
+  .sec2 .textC div svg{
+    height: 4vw
+  }
+  .sec2 .contend{
+    padding: 7vw;
+    gap: 3vw
+  }
+  .sec2 .contend h2,
+  .sec2 .contend p{
+    width: 100%;
+  }
+  .sec2 .contend .seo{
+    width: 100%
+  }
+  .sec2 .contend .seo button{
+    padding: 1vw 2.2vw;
+    gap: 0.5vw;
+    font-size: var(--horizontal-p)
+  }
+  .sec2 .contend .seo button svg{
+    height: 3vw;
+  }
+  .sec2 .contend .seo input{
+    width: 100%;
+    font-size: var(--horizontal-p)
+  }
+  .sec2 .contend .seo #search{
+    margin-right: 2vw
+  }
+  .sec2 .contend .contendC{
+    width: 100%;
+    gap: 2vw
+  }
+  .sec2 .contend .contendC .navC{
+    margin-top: 2vw
+  }
+  .sec2 .contend .contendC .navC ul{
+    gap: 3vw;
+    font-size: var(--horizontal-p)
+  }
+  .sec2 .contend .contendC .navC ul li{
+    color: #fff;
+    cursor: pointer;
+  }
+  .sec2 .contend .contendC .navC svg{
+    height: 3vw;
+  }
+  .sec2 .contend .contendC .boxC{
+    flex-direction: column;
+    gap: 3vw
+  }
+  .sec2 .contend .contendC .boxC #box{
+    width: 100%;
+    gap: 0.5vw;
+  }
+  .sec2 .contend .contendC .boxC #box img{
+    height: 35vw;
+  }
+  .sec2 .contend .contendC .boxC #box button{
+    padding: 1vw 3vw;
+    font-size: var(--horizontal-p);
+  }
+  .sec2 .contend #nxt {
+    padding: 1vw 3vw;
+    font-size: var(--horizontal-p);
+  }
+  .sec3{
+    flex-direction: column-reverse;
+    padding-bottom: 30vw;
+    gap: 20vw
+  }
+  .sec3 .imgC{
+    margin-left: 30vw;
+  }
+  .sec3 .imgC div{
+    width: 40vw;
+    height: 30vw;
+  }
+  .sec3 .imgC #card{
+    top: 10%;
+  }
+  .sec3 .imgC #skin{
+    top: 90%;
+  }
+  .sec3 .textC{
+    gap: 2vw;
+    width: 100%;
+  }
+  .sec3 .textC p{
+    width: 70vw;
+  }
+  .sec3 .textC .checkP{
+    gap: 2vw;
+    width: max-content;
+  }
+  .sec3 .textC .checkP div{
+    gap: 2vw
+  }
+  .sec3 .textC .checkP span{
+    height: 2vw;
+    width: 2vw;
+  }
+  .sec3 .textC button{
+    padding: 1vw 3vw;
+    font-size: var(--horizontal-p);
+    margin-top: 2vw;
+  }
+  .sec4{
+    gap: 3vw
+  }
+  .sec4 .slider .boxC {
+    gap: 7vw;
+  }
+  .sec4 .slider .boxC .review{
+    min-width: 80vw;
+    padding: 7vw 5vw;
+  }
+  .sec4 .slider .boxC .review .starC{
+    gap: 1vw;
+    margin-bottom: 3vw
+  }
+  .sec4 .slider .boxC .review .starC span{
+    height: 3vw;
+    width: 3vw;
+    
+  }
+  .sec4 .slider .boxC .review p{
+    width: 70vw;
+  }
+  .sec4 .slider .boxC .review #name{
+    margin-top: 4vw;
+  }
+  .sec4 p{
+    width: 90%;
+    margin-top: 4vw;
+  }
+  .sec4 button{
+    padding: 1.5vw 4vw;
+    font-size: var(--horizontal-p);
+  }
+  .sec5{
+    flex-direction: column;
+    padding-bottom: 50vw;
+  }
+  .sec5 .textC{
+    gap: 2vw;
+    width: 100%;
+  }
+  .sec5 .textC p{
+    width: 70vw;
+  }
+  .sec5 .textC button{
+    padding: 1vw 3vw;
+    font-size: var(--horizontal-p);
+    margin-top: 2vw;
+  }
+  .sec5 .imgC{
+    width: 60vw;
+    right: 0%;
+    top: 50%;
+    margin-right: 5vw;
+  }
+  .sec5 .imgC img{
+    height: 50%;
+  }
+  .sec5 .imgC #img1{
+    top: 20%;
+    left: -0%;
+  }
+  .sec5 .imgC #img2{
+    top: -0%;
+    left: 30%;
+  }
+  .sec6{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10vw;
+  }
+  .sec6 .textC{
+    gap: 5vw
+  }
+  .sec6 #logo h1 {
+    font-size: 4vw;
+  }
+  .sec6 .iconC{
+    gap: 3vw;
+  }
+  .sec6 .iconC svg{
+    height: 4vw;
+  }
+}
